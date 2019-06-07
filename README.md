@@ -15,14 +15,14 @@
 
 **Scenario 2: In Android devices with version 6.0 or higher, Runtime Permission Denied**
 
-**Given** In Android devices with version 6.0 or higher and Dangerous permission is requsted
+**Given** In Android devices with version 6.0 or higher and Dangerous permission is requested
 **When** Permission request dialog is shown and user can select Deny 
 **Then** onDenied method is called with denied permissions
 
 
 **Scenario 3: In Android devices with version 6.0 or higher, a few Permission Denied , and a few permission allowed**
 
-**Given** In Android devices with version 6.0 or higher and Dangerous permission is requsted
+**Given** In Android devices with version 6.0 or higher and Dangerous permission is requested
 **When** Permission request dialog is shown for multiple permissions and user can select Allow for a few and Deny for a few permissions 
 **Then** onDenied method is called with denied permissions
 **And** onGranted method is called with granted permissions
@@ -31,7 +31,7 @@
 **Scenario 4: In Android devices with version 6.0 or higher, Runtime Permissions already granted**
 
 **Given** In Android devices with version 6.0 or higher
-**When** Already granted Dangerous permission is requsted
+**When** Already granted Dangerous permission is requested
 **Then** Permission request dialog is not shown
 **Then** onGranted method is called with all already granted permissions
 
