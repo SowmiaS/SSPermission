@@ -31,10 +31,10 @@ class PermissionHandlerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-        val permissions: Array<String?>? =
-            intent.getStringArrayExtra(KEY_LIST_OF_PERMISSION_TOBE_REQUESTED) as? Array<String?>
-        if (permissions != null) {
-            ActivityCompat.requestPermissions(this, permissions, 3)
+        val permissions: Array<String>? =
+            intent.getStringArrayExtra(KEY_LIST_OF_PERMISSION_TOBE_REQUESTED) as? Array<String>
+        permissions?.let {
+            PermissionHandler.callRequestPermissions(this, permissions)
         }
     }
 
