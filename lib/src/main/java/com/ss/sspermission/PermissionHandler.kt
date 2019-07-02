@@ -71,7 +71,7 @@ object PermissionHandler {
     /**
      * This method calls the permission handler activity for sending the permission request to Android system
      */
-    private fun callPermissionHanlderActivity(permissions: ArrayList<String>, activity: AppCompatActivity?) {
+    private fun callPermissionHanlderActivity(permissions: ArrayList<String>, activity: Activity?) {
         activity?.let {
             PermissionHandlerActivity.newIntent(it, permissions.toTypedArray())
         }
@@ -96,7 +96,7 @@ object PermissionHandler {
     /**
      * This method filters out disabled permissions from the given list of permissions
      */
-    private fun filterDisabledPermissions(permissions: ArrayList<String>, activity: AppCompatActivity?): ArrayList<String> {
+    private fun filterDisabledPermissions(permissions: ArrayList<String>, activity: Activity?): ArrayList<String> {
         val iter : MutableIterator<String>  = permissions.iterator();
 
         while(iter.hasNext()) {
